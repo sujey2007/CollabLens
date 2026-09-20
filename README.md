@@ -1,10 +1,4 @@
 # CollabLens
-
-Ah, I see what happened! The markdown parser got tripped up on some raw emojis and unescaped characters right around the Mermaid diagram block in the README.md.
-
-Here is the clean, fully fixed README.md file code with the Mermaid syntax safely formatted so GitHub can render it without any errors:
-
-Markdown
 # CollabLens
 ### Collaborative Engineering Intelligence & Real-Time Sprint Risk Dashboard
 
@@ -28,16 +22,19 @@ Markdown
 
 ## System Architecture & Workflow
 
-The end-to-end telemetry pipeline from raw code commits to visual risk classification is structured as follows:
+The end-to-end telemetry pipeline from raw code commits to visual risk classification flows through the following stages:
 
-```mermaid
-graph TD
-    A[Commit Logs & Telemetry] -->|Asynchronous Ingestion| B[FastAPI Backend]
-    B --> C[Preprocessing Engine]
-    C -->|Rolling 7-Day Window| D[ML Risk Classification Model]
-    D --> E[Global Health Score Engine]
-    E -->|JSON Payload| F[React Native / Expo Client]
-    F --> G[Cyber-Grid Dashboard UI]
+```text
+[Commit Logs & Telemetry] 
+          │
+          ▼ (Asynchronous Ingestion)
+[FastAPI Backend & Preprocessing Engine]
+          │
+          ▼ (Rolling 7-Day Window Analysis)
+[ML Risk Classification Model]
+          │
+          ▼ (Global Health Score Engine)
+[React Native / Expo Client] ──> [Cyber-Grid Dashboard UI]
 Tech Stack
 Frontend (Mobile / Cross-Platform)
 Framework: React Native with Expo & Expo Router
